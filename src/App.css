@@ -13,7 +13,7 @@
   --taskbar-text: #111633;
   --tasklist-text: #111633;
   --top-side-bar:#f0f8ff;
-  --main-top-bar:#f0f8ff;
+  --main-top-bar:#e4f2ff;
   /* --icon-color: #7CBCFF; */
   --search-nav:#d7e8fa;
   --nav-hover: #B0D6FE;
@@ -112,8 +112,8 @@ body.dark{
   --text-area: #c0cffd;
   --text-side: #7384de;
   --text-color: #000000;
-  --cancel-btn: #f8cfcf;
-  --cancel-text: #ba2828;
+  --cancel-btn: #ba2828;
+  --cancel-text: #f8cfcf;
 }
 
 .sub-container{

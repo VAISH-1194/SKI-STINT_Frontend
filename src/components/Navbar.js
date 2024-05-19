@@ -3,7 +3,7 @@ import "../App.css"
 import "../assets/css/navbar.css"
 import Darkmode from './Darkmode'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import VerticalSplitIcon from '@mui/icons-material/VerticalSplit';
+import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import {useNavigate} from 'react-router-dom'
 
@@ -11,8 +11,8 @@ export default function Navbar() {
 
   const navigate = useNavigate();
 
-  const handleUsers = () => {
-    navigate('/users')
+  const handlemenu = () => {
+    navigate('/')
   }
 
   const handleLogo = () => {
@@ -30,8 +30,8 @@ export default function Navbar() {
     </div>
 
 
-    <IconButton onClick={handleUsers}>
-    <VerticalSplitIcon fontSize='large'  style={{marginTop:"2px",color:"var(--logo)"}}/>
+    <IconButton onClick={handlemenu}>
+    <MenuIcon fontSize='large'  style={{marginTop:"2px",color:"var(--logo)"}}/>
     </IconButton>
 
     <IconButton>

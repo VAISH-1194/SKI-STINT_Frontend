@@ -1,66 +1,55 @@
 .nav-container{
-    padding: 1rem 2rem 1rem 2rem;
-    background-color: var(--top-side-bar);
-    color: var(--logo);
-    font-size: var(--h2-font-size);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: var(--top-side-bar);
+  color: var(--logo);
+  font-size: var(--h2-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .nav-container>h2{
-    font-weight: 600;
-    cursor: pointer;
+  font-weight: 600;
+  cursor: pointer;
 }
 .nav-icon-container{
-    display: flex;
-    gap:3rem;
-    cursor: pointer;
+  display: flex;
+  gap:3rem;
+  cursor: pointer;
 }
 
-@media (max-width: 700px) {
-  .nav-icon-container{
-    gap: 10px;
-  }
+@media (max-width: 800px) {
+.nav-icon-container{
+  gap: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 /* .split-icon {
-    position: relative;
-  } */
-  
-  /* .split-icon:hover::before {
-    content: '';
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 2px;
+  position: relative;
+} */
+
+/* .split-icon:hover::before {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 2px;
+}
+
+.split-icon:active::before {
+  animation: ripple 0.5s linear;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  .split-icon:active::before {
-    animation: ripple 0.5s linear;
+  100% {
+    transform: scale(10);
+    opacity: 0;
   }
-  
-  @keyframes ripple {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(10);
-      opacity: 0;
-    }
-  }
-   */
+}
+ */

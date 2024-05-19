@@ -59,12 +59,12 @@ function LandingPage() {
     <Navbar/>
     <div className="land-container">
     <div className="main-bar">
-        <div className="main-tabs">
+    {/*   <div className="main-tabs">
         <div id="home"><h2>Home</h2></div>
         <div id="assign"><h2>Assigned Work</h2></div>
         <div id="completed"><h2>Work Completed</h2></div>
         <div id="pending"><h2>Work Pending</h2></div>
-        </div>
+  </div> */}
         </div>
         <div className="taskbar">
         <h3>Assign a Task</h3>
@@ -73,20 +73,20 @@ function LandingPage() {
         
         
         <div className="inputs">
-        <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "5.5%", position: "absolute" }}>&nbsp;</div>
         <div className="input-container">
+        <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "6%", position: "fixed" ,marginTop: "0.1px"}}>&nbsp;</div>
         <input type="text" id='box1' name="email" className="box" placeholder="Assigned To" value={assignedTo} onChange={(e) => setAssignedTo(e.target.value)} />
         </div>
-        <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "5.6%", position: "absolute" }}>&nbsp;</div>
         <div className="input-container">
+        <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "6.1%", position: "fixed" ,marginTop: "0.1px"}}>&nbsp;</div>
         <input type="text" name="task" className="box" placeholder="Task Name" value={taskName} onChange={(e) => setTaskName(e.target.value)} />
         </div>
-        <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "10.4%", position: "absolute" }}>&nbsp;</div>
         <div className="input-container">
+        <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "10.4%", position: "fixed" }}>&nbsp;</div>
         <textarea name="desc" id="desc" className="box" placeholder="Description of the task" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
         </div>
-        <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "5.5%", position: "absolute" }}>&nbsp;</div>
         <div className="input-container">
+        <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "6%", position: "fixed" ,marginTop: "0.1px"}}>&nbsp;</div>
         <input type="text" name="duedate" className="box" placeholder="Due Date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
         </div>
         </div>
