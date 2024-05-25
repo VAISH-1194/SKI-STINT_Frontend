@@ -1,0 +1,124 @@
+.land-container4{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--bg);
+    padding: 1.5rem;
+}
+
+.main-bar4{
+    background-color: var(--main-top-bar);
+    border-radius: 15px;
+    height: 80px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.main-search4{
+    outline: none;
+    border: none;
+    background-color: var(--search-nav);
+    height: 3rem;
+    width: 95%;
+    border-radius: 50px;
+    padding-left: 2rem;
+    left: 2rem;
+    position: relative;
+    top: 3rem;
+    font-size: var(--normal-font-size);
+}
+.main-search4:focus{
+    background-color: var(--nav-hover);
+}
+
+
+.taskbar4{
+    height: 73%;
+    width: 100%;
+    background-color: var(--main-top-bar);
+    margin-top: 1.7rem;
+    border-radius: 15px;
+    padding: 2rem;
+    
+}
+.taskbar4>h3{
+    color: var(--text-side);
+}
+.task-list4{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    
+}
+.task-list4>div>div>div{
+    display: flex;
+    justify-content: space-between;
+}
+.task-list4>div>div:first-child{
+    width: 100%;
+}
+.task-list4>div>div:nth-child(2){
+    width: 0.8%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.task-list4>div{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--search-nav);
+    margin-bottom: 1rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 0rem 0rem 0rem 2rem;
+}
+
+.task-list4 h3{
+    margin: 10px 0px 10px 0px;
+    
+}
+.task-list4 p{
+    margin: 10px 0px 10px 0px;
+}
+
+.task-list4::-webkit-scrollbar {
+    width: none;
+    display: none; 
+  }
+  
+  /* .task-list4::-webkit-scrollbar-track {
+    background-color: var(--main-top-bar);
+  }
+  
+  .task-list4::-webkit-scrollbar-thumb {
+    background-color: var(--search-nav); 
+    border-radius: 6px; 
+  }  */
+
+
+
+  .task-list4>div>div>div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .task-list4>div>div:first-child {
+    width: 100%;
+  }
+  
+  .task-list4>div>div:nth-child(2) {
+    width: 0.8%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .task-list4 {
+    height: 400px; 
+    overflow-y: auto;
+    border-radius: 4px;
+    padding: 10px;
+    scroll-behavior: smooth;
+  }

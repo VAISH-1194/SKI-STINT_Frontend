@@ -1,3 +1,4 @@
+
 .land-container{
   height: 100vh;
   width: 100%;
@@ -5,62 +6,64 @@
   padding: 1.5rem;
 }
 
+.user-wel {
+text-align: left;
+margin-left: 2rem;
+height: 10px;
+font-family: 'poppins';
+}
+
+#welc {
+font-weight: bolder;
+height: 5rem;
+font-size: 50px;
+color: var(--logo);
+
+}
+
+@media (max-width: 800px) {
+#welc {
+  font-weight: bolder;
+  font-size: 40px;
+}
+}
+
+@media (max-width: 710px) {
+#welc {
+  font-weight: bolder;
+  font-size: 37px;
+}
+}
+
+@media (max-width: 680px) {
+#welc {
+  font-weight: bolder;
+  font-size: 35px;
+}
+}
+
+
+@media (max-width: 660px) {
+#welc {
+  font-weight: bolder;
+  font-size: 30px;
+}
+}
+
+@media (max-width: 610px) {
+#welc {
+  font-weight: bolder;
+  font-size: 20px;
+}
+}
+
+
 .main-bar{
   background-color: var(--main-top-bar);
   border-radius: 15px;
   margin-top: -0.5rem;
   height: 190px;
   display: flex;
-  align-items: end;
-  justify-content: center;
-}
-
-/* .main-tabs{
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  margin-top: 3rem;
-}
-
-
-
-.main-tabs div{
-  background-color: var(--search-nav);
-  padding: 0.5rem 5rem 0.5rem 5rem;
-  border-radius: 10px;
-  font-size: var(--normal-font-size);
-  color:var(--nav-text);
-  cursor: pointer;
-}
-.main-tabs div:hover{
-  background-color: var(--nav-hover);
-}
-
-.main-tabs{
-  display: flex;
-  width: 110%;
-  justify-content: space-around;
-  margin-top: 5rem;
-  position: relative;
-  top: 21.5%;
-}
-
-.main-tabs div{
-  background-color: var(--search-nav);
-  padding: 0.5rem 4rem 0.5rem 4rem;
-  border-radius: 10px;
-  font-size: smaller;
-  color:var(--nav-text);
-  cursor: pointer;
-} */
-
-.main-tabs{
-display: flex;
-width: 90%;
-justify-content: space-around;
-margin-top: 5rem;
-position: relative;
-top: 21.5%;
 }
 
 .ele{
@@ -87,7 +90,7 @@ color:var(--nav-text);
 font-size: 12.5px;
 }
 
-#completed {
+#comp {
 width: 250px;
 height: 50px;
 background-color: var(--search-nav);
@@ -123,7 +126,7 @@ font-size: 12.5px;
 }
 
 .taskbar>h3{
-  color: var(--tasklist-text);
+  color: var( --logo);
   margin-top: -1rem;
 }
 
@@ -132,11 +135,6 @@ font-size: 12.5px;
   flex-direction: row;
   gap: 1rem;
 }
-
-/* 
-.task-list>div{
-  display: flex;
-} */
 
 .taskbar::-webkit-scrollbar {
   width: 12px; 
@@ -215,6 +213,7 @@ font-size: 12.5px;
   color: var(--cancel-text);
   font-weight: 700;
   box-shadow: none;
+  transition: width 0.3s ease;
 }
 
 #cancel:hover{

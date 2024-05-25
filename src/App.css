@@ -9,11 +9,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 /*========= Colors ===========*/
-  --bg:#dfdfdf;
+  --bg:#e6e6e6;
   --taskbar-text: #111633;
   --tasklist-text: #111633;
-  --top-side-bar:#f0f8ff;
-  --main-top-bar:#e4f2ff;
+  --top-side-bar: #ffffff;
+  --main-top-bar:#ffffff;
   /* --icon-color: #7CBCFF; */
   --search-nav:#d7e8fa;
   --nav-hover: #B0D6FE;
@@ -24,14 +24,19 @@
   --view-text: #1B0A84;
   --view-hover:#7CBCFF;
   --view-bg:#B0D6FE;
-  --logo:#7CBCFF;
+  --logo: #345578;
   --task-description-bg: #a7d0ff;
   --goal-icon: #2b2323;
   --text-area:#c9d4f7 ;
-  --text-side: #a2a9cc;
+  --text-side: #161c3b;
+  --user-text: #345578;
   --text-color:#000000 ;
   --cancel-btn: #f8cfcf;
   --cancel-text: #ba2828;
+  --user-acc-bg: #d5d5d5;
+  --user-acc-txt: #18191a;
+  /* --uname:#888686 ; */
+  --uname:#5f5c5c ;
 /* ======= Font size ======= */
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
@@ -94,7 +99,7 @@ body.dark{
   --bg:#070D27;
   --taskbar-text:#9AABFF ;
   --tasklist-text: #9AABFF;
-  --top-side-bar:#111633;
+  --top-side-bar:#21253a;
   --main-top-bar:#1D213E;
   --icon-color:#111633;
   --search-nav:#A2ADE5;
@@ -110,10 +115,15 @@ body.dark{
   --task-description-bg: #4C58B1;
   --goal-icon: #2b2323;
   --text-area: #c0cffd;
-  --text-side: #7384de;
+  --text-side: #9aa8f1;
+  /* --user-text: #203955; */
+  --user-text: #113357;
   --text-color: #000000;
   --cancel-btn: #ba2828;
   --cancel-text: #f8cfcf;
+  --user-acc-bg: #e0e2e3;
+  --user-acc-txt: #18191a;
+  --uname:#cfc8c8 ;
 }
 
 .sub-container{

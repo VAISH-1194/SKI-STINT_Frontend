@@ -1,5 +1,5 @@
 import React, { useContext, createContext, useState } from 'react';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import LogoutIcon from '@mui/icons-material/Logout';
 import HomeIcon from '@mui/icons-material/Home';
 import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
@@ -8,7 +8,7 @@ import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import NotStartedIcon from '@mui/icons-material/NotStarted';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import namelogo from '../assets/img/namelogo.png';
-import LandingPage from './LandingPage';
+import Tasks from './Tasks';
 import '../assets/css/sidebar.css';
 import '../App.css';
 
@@ -16,9 +16,10 @@ const SidebarContext = createContext();
 
 function SidebarProvider({ children }) {
   const [expanded, setExpanded] = useState(true);
+  const [filterType, setFilterType] = useState(null);
 
   return (
-    <SidebarContext.Provider value={{ expanded, setExpanded }}>
+    <SidebarContext.Provider value={{ expanded, setExpanded, filterType, setFilterType }}>
       <div className="body">
         {children}
       </div>
@@ -27,8 +28,12 @@ function SidebarProvider({ children }) {
 }
 
 function Sidebar() {
-  const { expanded} = useContext(SidebarContext);
+  const { expanded, setFilterType } = useContext(SidebarContext);
   const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate("/landingpage");
+  };
 
   return (
     <nav className={`sidebar ${expanded ? '' : 'close'}`}>
@@ -46,27 +51,27 @@ function Sidebar() {
       <div className="menu-bar">
         <div className="menu">
           <ul className="menu-links">
-            <li className="nav-link" onClick={() => navigate('/')}>
+            <li className="nav-link" onClick={handleHomeClick}>
               <HomeIcon className="icon" />
               <span className="text nav-text">Home</span>
             </li>
-            <li className="nav-link" onClick={() => navigate("/alltasks")}>
+            <li className="nav-link" onClick={() => setFilterType(null)}>
               <AssignmentIcon className="icon" />
               <span className="text nav-text">Assigned Task</span>
             </li>
-            <li className="nav-link" onClick={() => navigate("/completedtasks")}>
+            <li className="nav-link" onClick={() => setFilterType('completed')}>
               <AssignmentTurnedInIcon className="icon" />
               <span className="text nav-text">Task Completed</span>
             </li>
-            <li className="nav-link" onClick={() => navigate("/yettasks")}>
+            <li className="nav-link" onClick={() => setFilterType('progress')}>
               <AssignmentLateIcon className="icon" />
               <span className="text nav-text">Task Pending</span>
             </li>
-            <li className="nav-link" onClick={() => navigate("/progresstasks")}>
+            <li className="nav-link" onClick={() => setFilterType('yet')}>
               <NotStartedIcon className="icon" />
               <span className="text nav-text">Task yet to start</span>
             </li>
-            <li className="nav-link" onClick={() => navigate('/users')}>
+            <li className="nav-link" onClick={() => navigate("/users")}>
               <AssignmentIndIcon className="icon" />
               <span className="text nav-text">View users</span>
             </li>
@@ -83,19 +88,33 @@ function Sidebar() {
   );
 }
 
-function Dashboard() {
+function Task() {
+  const { filterType } = useContext(SidebarContext);
+  const getTitle = () => {
+    switch (filterType) {
+      case 'completed':
+        return 'Tasks Completed';
+      case 'progress':
+        return 'Tasks Pending';
+      case 'yet':
+        return 'Tasks yet to start';
+      default:
+        return 'Assigned Tasks';
+    }
+  };
+
   return (
     <section className="home">
-      <LandingPage />
+      <Tasks filterType={filterType} title={getTitle()} />
     </section>
   );
 }
 
-export default function App() {
+export default function TaskSB() {
   return (
     <SidebarProvider>
       <Sidebar />
-      <Dashboard />
+      <Task />
     </SidebarProvider>
   );
 }
