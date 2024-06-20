@@ -4,6 +4,7 @@ import "../assets/css/navbar.css";
 import Darkmode from './Darkmode';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 import Popover from '@mui/material/Popover';
 import { useNavigate } from 'react-router-dom';
 import accountData from './Account.json';
@@ -22,6 +23,10 @@ export default function Navbar() {
     setAccountAnchorEl(event.currentTarget);
   };
 
+  // const handleMenu = (event) => {
+  //   setAccountAnchorEl(event.currentTarget);
+  // };
+
   const handleAccountClose = () => {
     setAccountAnchorEl(null);
   };
@@ -36,9 +41,9 @@ export default function Navbar() {
           <Darkmode />
         </div>
 
-      {/*  <IconButton onClick={handleMenu}>
+       {/* <IconButton onClick={handleMenu}>
           <MenuIcon fontSize='large' style={{ marginTop: "2px", color: "var(--logo)" }} />
-  </IconButton> */}
+        </IconButton> */}
 
         <div
           className='icon-hover-container'

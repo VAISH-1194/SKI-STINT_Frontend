@@ -31,7 +31,7 @@ function Tasks({ filterType, title })
       type: "yet",
     },
     {
-      title: "Dr.Jackie Chan",
+      title: "Dr.Jack Sparrow",
       description: "Submission of CIA results",
       date: "25-04-2024",
       type: "progress",
@@ -126,24 +126,24 @@ function Tasks({ filterType, title })
         <div className="taskbar4">
           <h3>{title}</h3> 
           <div className="task-list4">
-            {displayedData.map((item, index) => (
-              <div key={index} className="task-item5" id={item.type}>
-                <div className="task-details4" style={{ height: "5.5rem" }}>
-                  <h3 style={{ fontWeight: "500" }}>
-                    Task assigned by {item.title}
-                  </h3>
-                  <div className="task-info4">
-                    <p>Task Description: {item.description}</p>
-                    <p style={{ marginRight: "1rem" }}>Date: {item.date}</p>
-                  </div>
-                </div>
-                <div
-                  className="task-status4"
-                  style={{ backgroundColor: getTaskStatusColor(item.type) }}
-                ></div>
-              </div>
+          {displayedData.map((item, index) => (
+            <div key={index} className="vertical-tag" id={item.type}>
+            <div className="task-details4" style={{ height: "5.5rem" }}>
+            <h3 style={{ fontWeight: "500" }}>
+            Task assigned by {item.title}
+            </h3>
+            <div className="task-info4">
+            <p>Task Description: {item.description}</p>
+            <p style={{ marginRight: "1rem" }}>Date: {item.date}</p>
+            </div>
+            </div>
+            <div
+            className="task-status4"
+            style={{ backgroundColor: getTaskStatusColor(item.type) }}
+            ></div>
+            </div>
             ))}
-          </div>
+            </div>
         </div>
       </div>
     </>
@@ -151,3 +151,29 @@ function Tasks({ filterType, title })
 }
 
 export default Tasks;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

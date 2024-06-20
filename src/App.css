@@ -14,7 +14,11 @@
   --tasklist-text: #111633;
   --top-side-bar: #ffffff;
   --main-top-bar:#ffffff;
-  /* --icon-color: #7CBCFF; */
+  /* --vertical-tag: #91A6FF; */
+  --vertical-tag: #c6d1ff;
+  --vertical-tag-hover: #e2ebf5;
+  --vertical-tag-hover2: #91A6FF;
+  --sub-hover:#f0f0f0;
   --search-nav:#d7e8fa;
   --nav-hover: #B0D6FE;
   --completed: #5dfd5d;
@@ -59,6 +63,34 @@
     --smaller-font-size: .875rem;
   }
 }
+
+
+
+
+/* App.css */
+.app-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  height: 100vh;
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+  background-color: #f0f0f0;
+}
+
+.content {
+  grid-column: 2 / 3;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
 *,
 ::before,
 ::after {
@@ -66,7 +98,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  min-height: 100vh;
 }
 h1,
 h2,h3,h4,h5,h6,
@@ -90,6 +122,7 @@ img {
   height: auto;
   display: block;
 }
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -102,6 +135,13 @@ body.dark{
   --top-side-bar:#21253a;
   --main-top-bar:#1D213E;
   --icon-color:#111633;
+
+  --vertical-tag: #c6d1ff;
+  --vertical-tag-hover: #c5d0ff;
+  --vertical-tag-hover2: #4d95e1;
+  --sub-hover:#abc1d2;
+  --shadow: ; 
+
   --search-nav:#A2ADE5;
   --nav-hover: #8498FF;
   --completed: #008A00;

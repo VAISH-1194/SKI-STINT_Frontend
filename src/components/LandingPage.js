@@ -55,7 +55,7 @@ function LandingPage() {
 
   return (
     <>
-      <Navbar/>
+       <Navbar/> 
       <div className="land-container">
         <div className="main-bar">
           <div className="user-wel">
