@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import "../App.css";
 import "../assets/css/navbar.css";
 import Darkmode from './Darkmode';
@@ -8,12 +8,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Popover from '@mui/material/Popover';
 import { useNavigate } from 'react-router-dom';
 import accountData from './Account.json';
+import { SidebarContext } from './Sidebar'; 
 
 export default function Navbar() {
   const navigate = useNavigate();
   const user = accountData[0]; 
   const [isHovered, setIsHovered] = useState(false);
   const [accountAnchorEl, setAccountAnchorEl] = useState(null);
+  const { expanded, setExpanded } = useContext(SidebarContext);
 
   const handleLogo = () => {
     navigate('/');
@@ -23,15 +25,15 @@ export default function Navbar() {
     setAccountAnchorEl(event.currentTarget);
   };
 
-  // const handleMenu = (event) => {
-  //   setAccountAnchorEl(event.currentTarget);
-  // };
-
   const handleAccountClose = () => {
     setAccountAnchorEl(null);
   };
 
   const openAccount = Boolean(accountAnchorEl);
+
+  const toggleSidebar = () => {
+    setExpanded(!expanded);
+  };
 
   return (
     <div className='nav-container'>
@@ -40,11 +42,11 @@ export default function Navbar() {
         <div>
           <Darkmode />
         </div>
-
-       {/* <IconButton onClick={handleMenu}>
-          <MenuIcon fontSize='large' style={{ marginTop: "2px", color: "var(--logo)" }} />
-        </IconButton> */}
-
+        <div>
+          <IconButton onClick={toggleSidebar}>
+            <MenuIcon className='MenuIcon' fontSize='large' style={{ marginTop: "2px", color: "var(--logo)" }} />
+          </IconButton>
+        </div>
         <div
           className='icon-hover-container'
           onMouseEnter={() => setIsHovered(true)}
@@ -56,7 +58,6 @@ export default function Navbar() {
           </IconButton>
           {isHovered && <div className='hover-content'>{user.email}</div>}
         </div>
-
         <Popover
           open={openAccount}
           anchorEl={accountAnchorEl}
@@ -80,10 +81,6 @@ export default function Navbar() {
             <div className='email'>
               <div id='mail'>{user.email}</div>
             </div>
-          {/*  <div className="bottom-content1">
-              <LogoutIcon id='lo' className="icon1" />
-              <span className="text nav-text1">Logout</span>
-        </div> */}
           </div>
         </Popover>
       </div>

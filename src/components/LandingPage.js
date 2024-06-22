@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../assets/css/landingpage.css";
-import Navbar from './Navbar';
 import "../App.css";
 import IMG from "../assets/img/img3.png";
 import Button from '@mui/material/Button';
-import Userdata from "./Account.json"; 
+import Userdata from "./Account.json";
 
 function LandingPage() {
   const [assignedTo, setAssignedTo] = useState('');
@@ -55,7 +54,6 @@ function LandingPage() {
 
   return (
     <>
-       <Navbar/> 
       <div className="land-container">
         <div className="main-bar">
           <div className="user-wel">
@@ -74,19 +72,19 @@ function LandingPage() {
             <form onSubmit={handleSubmit} className="form">
               <div className="inputs">
                 <div className="input-container">
-                  <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "6%", position: "fixed" ,marginTop: "0.1px"}}>&nbsp;</div>
+                  <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "5px", height: "6%", position: "fixed" ,marginTop: "0.1px"}}>&nbsp;</div>
                   <input type="text" id='box1' name="email" className="box" placeholder="Assigned To" value={assignedTo} onChange={(e) => setAssignedTo(e.target.value)} />
                 </div>
                 <div className="input-container">
-                  <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "6.1%", position: "fixed" ,marginTop: "0.1px"}}>&nbsp;</div>
+                  <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "5px", height: "6.1%", position: "fixed" ,marginTop: "0.1px"}}>&nbsp;</div>
                   <input type="text" name="task" className="box" placeholder="Task Name" value={taskName} onChange={(e) => setTaskName(e.target.value)} />
                 </div>
                 <div className="input-container">
-                  <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "10.4%", position: "fixed" }}>&nbsp;</div>
+                  <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "5px", height: "10.4%", position: "fixed" }}>&nbsp;</div>
                   <textarea name="desc" id="desc" className="box" placeholder="Description of the task" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                 </div>
                 <div className="input-container">
-                  <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "10px", height: "6%", position: "fixed" ,marginTop: "0.1px"}}>&nbsp;</div>
+                  <div className="side-tag" style={{ backgroundColor: '#7384DE', width: "5px", height: "6%", position: "fixed" ,marginTop: "0.1px"}}>&nbsp;</div>
                   <input type="text" name="duedate" className="box" placeholder="Due Date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
                 </div>
               </div>
@@ -113,6 +111,8 @@ function LandingPage() {
           theme="light"
         />
       </div>
+
+      
     </>
   );
 }

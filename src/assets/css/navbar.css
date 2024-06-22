@@ -19,10 +19,15 @@
 
 
 @media (max-width: 800px) {
-.nav-icon-container{
-  gap: 10px;
+  .nav-icon-container{
+    gap: 10px;
+  }
+
+  .MenuIcon {
+    display: none !important;
+  }
 }
-}
+
 
 
 .icon-hover-container {

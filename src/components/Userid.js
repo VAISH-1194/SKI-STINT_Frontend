@@ -1,10 +1,14 @@
-import { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import Navbar from "./Navbar";
 import "../assets/css/tasks.css";
+
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+
+import myimage from '../assets/img/goal.png'; 
 
 import tom from "../assets/img/tom1.png";
 import patlu from "../assets/img/patlu.png";
@@ -138,6 +142,8 @@ function Userid({ filterType }) {
   const [sortDropdownVisible, setSortDropdownVisible] = useState(false);
   const [departmentSubMenuVisible, setDepartmentSubMenuVisible] = useState(false);
   const [designationSubMenuVisible, setDesignationSubMenuVisible] = useState(false);
+  const [selectedTask, setSelectedTask] = useState(null); // State to store selected task
+  const [openDialog, setOpenDialog] = useState(false); // State to control dialog visibility
 
   useEffect(() => {
     if (filterType) {
@@ -170,31 +176,39 @@ function Userid({ filterType }) {
       item.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const handleTaskClick = (task) => {
+    setSelectedTask(task);
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+    setSelectedTask(null);
+  };
+
   const user = users.find(u => u.name === userName);
 
   const toggleSortDropdown = () => {
     setSortDropdownVisible(!sortDropdownVisible);
-    // Close submenus when toggling the main dropdown
     setDepartmentSubMenuVisible(false);
     setDesignationSubMenuVisible(false);
   };
 
   const handleSortOptionClick = (option) => {
     if (option === 'Designation') {
-      setDesignationSubMenuVisible(!designationSubMenuVisible); // Toggle designation submenu
-      setDepartmentSubMenuVisible(false); // Close department submenu
+      setDesignationSubMenuVisible(!designationSubMenuVisible);
+      setDepartmentSubMenuVisible(false);
     } else if (option === 'Department') {
-      setDepartmentSubMenuVisible(!departmentSubMenuVisible); // Toggle department submenu
-      setDesignationSubMenuVisible(false); // Close designation submenu
+      setDepartmentSubMenuVisible(!departmentSubMenuVisible); 
+      setDesignationSubMenuVisible(false);
     } else {
-      setDepartmentSubMenuVisible(false); // Close department submenu
-      setDesignationSubMenuVisible(false); // Close designation submenu
+      setDepartmentSubMenuVisible(false); 
+      setDesignationSubMenuVisible(false); 
     }
   };
 
   return (
     <>
-      <Navbar />
       <div className="land-container4">
         <div className="main-bar1">
           <div className="search-container">
@@ -260,7 +274,7 @@ function Userid({ filterType }) {
           </div>
           <div className="task-list6">
             {displayedData.map((item, index) => (
-              <div key={index} className="vertical-tag" id={item.type}>
+              <div key={index} className="vertical-tag" id={item.type} onClick={() => handleTaskClick(item)}>
                 <div className="task-details4" style={{ height: "5.5rem" }}>
                   <h3 style={{ fontWeight: "500" }}>
                     Task assigned by {item.title}
@@ -279,6 +293,47 @@ function Userid({ filterType }) {
           </div>
         </div>
       </div>
+      <Dialog onClose={handleCloseDialog} open={openDialog} fullWidth maxWidth="md" className="custom-dialog">
+        <DialogContent dividers>
+          <div className='logo'>
+            <img src={myimage} alt='Logo'></img>
+          </div>
+          {selectedTask && (
+            <div className="task-description">
+              <div className="boxassign">
+                <div className="texts">
+                  <p>Assigned by: {selectedTask.title}</p>
+                </div>
+              </div>
+              <div className="boxtask">
+                <div className="texts">
+                  <p>Task Name: {selectedTask.description}</p>
+                </div>
+              </div>
+              <div className="boxdesc">
+                <div className="texts">
+                  <p>Description: {selectedTask.description}</p>
+                </div>
+              </div>
+              <div className="boxdate">
+                <div className="texts">
+                  <p>Due date: {selectedTask.date}</p>
+                </div>
+              </div>
+              <div className="boxstatus">
+                <div className="texts">
+                  <p>Task Status: {selectedTask.type}</p>
+                </div>
+              </div>
+              <div className="piththaan">
+                <div>
+                  <Button className="piththaan1" onClick={handleCloseDialog}>Done</Button>
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
