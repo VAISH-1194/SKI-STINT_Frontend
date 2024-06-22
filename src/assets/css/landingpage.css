@@ -28,7 +28,7 @@ color: var(--logo);
 }
 }
 
-@media (max-width: 710px) {
+/* @media (max-width: 710px) {
 #welc {
   font-weight: bolder;
   font-size: 37px;
@@ -40,10 +40,10 @@ color: var(--logo);
   font-weight: bolder;
   font-size: 35px;
 }
-}
+} */
 
 
-@media (max-width: 660px) {
+/* @media (max-width: 660px) {
 #welc {
   font-weight: bolder;
   font-size: 30px;
@@ -55,7 +55,7 @@ color: var(--logo);
   font-weight: bolder;
   font-size: 20px;
 }
-}
+} */
 
 
 .main-bar{
