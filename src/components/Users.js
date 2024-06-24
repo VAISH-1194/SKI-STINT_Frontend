@@ -120,6 +120,7 @@ function Users() {
       setDepartmentSubMenuVisible(!departmentSubMenuVisible);
       setDesignationSubMenuVisible(false); 
     } else {
+      setFilter({ type: null, value: "All" });
       setDepartmentSubMenuVisible(false);
       setDesignationSubMenuVisible(false);
     }
@@ -202,6 +203,12 @@ function Users() {
                     </div>
                   </div>
                 )}
+              </div>
+              <div
+                className="sort-menu-item"
+                onClick={() => handleSortOptionClick('All')}
+              >
+                All
               </div>
             </div>
           )}
